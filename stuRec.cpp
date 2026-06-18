@@ -30,7 +30,36 @@ if(myStu==nullptr){
     return 0;
 }
 cout<<myStu->Class;
-return 0;
+while(true){
+    int x;
+    cout<<"Enter 1 to add a student, Enter 2 to pull a students records\n";
+    cin>>x;
+    if(x==1){
+        string name;
+        string Class;
+        cout<<"Enter students name\n";
+        cin>>name;
+        cout<<"Enter students class\n";
+        cin>>Class;
+        addStu(name,Class);
+        }
+    else if(x==2)
+    {
+        string name;
+        cout<<"Enter students name\n";
+        cin>>name;
+        student* result = findStu(name);
+        if(result==nullptr)
+        {
+            cout<<"Error, Student not found\n";
+        }
+        else
+        {
+            cout<<result->Class<<endl<<endl;
+        }
+    }
+
+}
 
 
 
